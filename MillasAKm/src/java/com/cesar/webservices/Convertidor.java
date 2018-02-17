@@ -1,25 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.cesar.webservices;
-
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
-
-/**
- *
- * @author Cesar
- */
-@WebService(serviceName="Convertidor")
+@WebService(serviceName = "Convertidor")
 public class Convertidor {
 
-    /** This is a sample web service operation */
-    @WebMethod(operationName="hello")
-    public String hello(@WebParam(name="name") String txt) {
-        return "Hello "+txt+" !";
+    @WebMethod(operationName = "millasakilometros")
+    public double millasakilometros(@WebParam(name = "millas") double millas) {        
+        return millas * 1.60934;
     }
+
+    @WebMethod(operationName = "kilometrosamillas")
+    public double kilometrosamillas(@WebParam(name = "kilometros") double kilometros) {        
+        return kilometros / 1.60934;
+    }
+
 }
